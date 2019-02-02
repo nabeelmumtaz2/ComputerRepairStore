@@ -6,6 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="929ae44286214e5099faca5340c34422" Name="Diagram1" >
         <EntityTypeShape EntityType="Cr.Customers" Width="1.5" PointX="2" PointY="0.75" />
+        <EntityTypeShape EntityType="Cr.Systems" Width="1.5" PointX="4.5" PointY="0.625" />
+        <AssociationConnector Association="Cr.CustomersSystem" />
+        <EntityTypeShape EntityType="Cr.Agents" Width="1.5" PointX="6.875" PointY="1.125" />
+        <AssociationConnector Association="Cr.SystemsAgents" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

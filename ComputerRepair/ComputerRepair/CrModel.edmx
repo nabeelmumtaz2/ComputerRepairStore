@@ -4,34 +4,199 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Cr.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="CrTargetContainer" >
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="Cr.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CrStoreContainer">
+    <EntitySet Name="Customers" EntityType="Cr.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Systems1" EntityType="Cr.Store.Systems1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Agents" EntityType="Cr.Store.Agents" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CustomersSystem" Association="Cr.Store.CustomersSystem">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="System" EntitySet="Systems1" />
+    </AssociationSet>
+    <AssociationSet Name="SystemsAgents" Association="Cr.Store.SystemsAgents">
+      <End Role="Systems" EntitySet="Systems1" />
+      <End Role="Agents" EntitySet="Agents" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Client_Id" />
+    </Key>
+    <Property Name="Client_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone_Number" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Systems1">
+    <Key>
+      <PropertyRef Name="System_Id" />
+    </Key>
+    <Property Name="System_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brands" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Drop_Off_Date" Type="datetime" Nullable="false" />
+    <Property Name="Pick_Up_Date" Type="datetime" Nullable="false" />
+    <Property Name="Quote" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomersClient_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Agents">
+    <Key>
+      <PropertyRef Name="Agent_Id" />
+    </Key>
+    <Property Name="Agent_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Employ_Id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Shift_Time" Type="datetime" Nullable="false" />
+    <Property Name="SystemsSystem_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="CustomersSystem">
+    <End Role="Customers" Type="Cr.Store.Customers" Multiplicity="1" />
+    <End Role="System" Type="Cr.Store.Systems1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Client_Id" />
+      </Principal>
+      <Dependent Role="System">
+        <PropertyRef Name="CustomersClient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SystemsAgents">
+    <End Role="Systems" Type="Cr.Store.Systems1" Multiplicity="0..1" />
+    <End Role="Agents" Type="Cr.Store.Agents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Systems">
+        <PropertyRef Name="System_Id" />
+      </Principal>
+      <Dependent Role="Agents">
+        <PropertyRef Name="SystemsSystem_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Cr" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="CrContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Cr.Customers" />
+          <EntitySet Name="Systems1" EntityType="Cr.Systems" />
+          <AssociationSet Name="CustomersSystem" Association="Cr.CustomersSystem">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="System" EntitySet="Systems1" />
+          </AssociationSet>
+          <EntitySet Name="Agents" EntityType="Cr.Agents" />
+          <AssociationSet Name="SystemsAgents" Association="Cr.SystemsAgents">
+            <End Role="Systems" EntitySet="Systems1" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Customers">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Client_Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" />
+          <Property Name="Last_Name" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="Phone_Number" Type="String" Nullable="false" />
+          <NavigationProperty Name="Systems" Relationship="Cr.CustomersSystem" FromRole="Customers" ToRole="System" />
         </EntityType>
+        <EntityType Name="Systems">
+          <Key>
+            <PropertyRef Name="System_Id" />
+          </Key>
+          <Property Name="System_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brands" Type="String" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" />
+          <Property Name="Drop_Off_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Pick_Up_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Quote" Type="String" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Cr.CustomersSystem" FromRole="System" ToRole="Customers" />
+          <Property Name="CustomersClient_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agents" Relationship="Cr.SystemsAgents" FromRole="Systems" ToRole="Agents" />
+        </EntityType>
+        <Association Name="CustomersSystem">
+          <End Type="Cr.Customers" Role="Customers" Multiplicity="1" />
+          <End Type="Cr.Systems" Role="System" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Client_Id" />
+            </Principal>
+            <Dependent Role="System">
+              <PropertyRef Name="CustomersClient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="Agent_Id" />
+          </Key>
+          <Property Name="Agent_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" />
+          <Property Name="Last_Name" Type="String" Nullable="false" />
+          <Property Name="Employ_Id" Type="String" Nullable="false" />
+          <Property Name="Shift_Time" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="System" Relationship="Cr.SystemsAgents" FromRole="Agents" ToRole="Systems" />
+          <Property Name="SystemsSystem_Id" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="SystemsAgents">
+          <End Type="Cr.Systems" Role="Systems" Multiplicity="0..1" />
+          <End Type="Cr.Agents" Role="Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Systems">
+              <PropertyRef Name="System_Id" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="SystemsSystem_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="Cr" />
-        <Alias Key="Target" Value="Cr.Store" />
-        <EntityContainerMapping CdmEntityContainer="CrContainer" StorageEntityContainer="CrTargetContainer">
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrStoreContainer" CdmEntityContainer="CrContainer">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(Cr.Customers)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Systems1">
+      <EntityTypeMapping TypeName="IsTypeOf(Cr.Systems)">
+        <MappingFragment StoreEntitySet="Systems1">
+          <ScalarProperty Name="System_Id" ColumnName="System_Id" />
+          <ScalarProperty Name="Brands" ColumnName="Brands" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Drop_Off_Date" ColumnName="Drop_Off_Date" />
+          <ScalarProperty Name="Pick_Up_Date" ColumnName="Pick_Up_Date" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="CustomersClient_Id" ColumnName="CustomersClient_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="IsTypeOf(Cr.Agents)">
+        <MappingFragment StoreEntitySet="Agents">
+          <ScalarProperty Name="Agent_Id" ColumnName="Agent_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Employ_Id" ColumnName="Employ_Id" />
+          <ScalarProperty Name="Shift_Time" ColumnName="Shift_Time" />
+          <ScalarProperty Name="SystemsSystem_Id" ColumnName="SystemsSystem_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -45,6 +210,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nabeel Mumtaz\source\repos\ComputerRepair\ComputerRepair\CrModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore\ComputerRepair\ComputerRepair\CrModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
