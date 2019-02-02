@@ -12,7 +12,7 @@ namespace ComputerRepair
     using System;
     using System.Collections.Generic;
     
-    public partial class Agents
+    public partial class Agents 
     {
         public int Agent_Id { get; set; }
         public string First_Name { get; set; }
