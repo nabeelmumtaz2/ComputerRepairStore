@@ -137,7 +137,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgentsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SystemsController.cs" />
     <Compile Include="CrModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,6 +221,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Systems\Create.cshtml" />
+    <Content Include="Views\Systems\Delete.cshtml" />
+    <Content Include="Views\Systems\Details.cshtml" />
+    <Content Include="Views\Systems\Edit.cshtml" />
+    <Content Include="Views\Systems\Index.cshtml" />
+    <Content Include="Views\Agents\Create.cshtml" />
+    <Content Include="Views\Agents\Delete.cshtml" />
+    <Content Include="Views\Agents\Details.cshtml" />
+    <Content Include="Views\Agents\Edit.cshtml" />
+    <Content Include="Views\Agents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

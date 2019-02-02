@@ -1,0 +1,66 @@
+﻿@model ComputerRepair.Systems
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Systems</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brands)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brands)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drop_Off_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drop_Off_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pick_Up_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pick_Up_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.First_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.System_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
