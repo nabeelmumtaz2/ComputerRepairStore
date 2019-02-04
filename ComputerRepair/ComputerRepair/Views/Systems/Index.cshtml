@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ComputerRepair.Systems>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Systems";
 }
 
-<h2>Index</h2>
+<h2></h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create A New System", "Create", "Systems", null, new { @class = "btn btn-primary btn-large" })
 </p>
 <table class="table">
     <tr>
@@ -50,6 +50,7 @@
             @Html.DisplayFor(modelItem => item.Quote)
         </td>
         <td>
+            
             @Html.DisplayFor(modelItem => item.Customer.First_Name)
         </td>
         <td>

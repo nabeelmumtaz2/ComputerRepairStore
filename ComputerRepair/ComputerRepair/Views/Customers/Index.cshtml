@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<ComputerRepair.Customers>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "New Customers";
 }
-
-<h2>Index</h2>
-
+<h2></h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create A New Customer", "Create", "customers", null, new { @class = "btn btn-primary btn-large" })
+
 </p>
 <table class="table">
     <tr>
