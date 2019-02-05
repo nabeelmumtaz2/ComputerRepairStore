@@ -48,7 +48,7 @@
     <Property Name="First_Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Last_Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Employ_Id" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Shift_Time" Type="datetime" Nullable="false" />
+    <Property Name="Shift_Type" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SystemsSystem_Id" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="CustomersSystem">
@@ -137,7 +137,7 @@
           <Property Name="First_Name" Type="String" Nullable="false" />
           <Property Name="Last_Name" Type="String" Nullable="false" />
           <Property Name="Employ_Id" Type="String" Nullable="false" />
-          <Property Name="Shift_Time" Type="DateTime" Nullable="false" />
+          <Property Name="Shift_Type" Type="String" Nullable="false" />
           <NavigationProperty Name="System" Relationship="Cr.SystemsAgents" FromRole="Agents" ToRole="Systems" />
           <Property Name="SystemsSystem_Id" Type="Int32" Nullable="true" />
         </EntityType>
@@ -190,7 +190,7 @@
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="Employ_Id" ColumnName="Employ_Id" />
-          <ScalarProperty Name="Shift_Time" ColumnName="Shift_Time" />
+          <ScalarProperty Name="Shift_Type" ColumnName="Shift_Type" />
           <ScalarProperty Name="SystemsSystem_Id" ColumnName="SystemsSystem_Id" />
         </MappingFragment>
       </EntityTypeMapping>

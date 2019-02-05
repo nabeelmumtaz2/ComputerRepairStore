@@ -11,7 +11,8 @@ namespace ComputerRepair
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Systems
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,14 @@ namespace ComputerRepair
         }
     
         public int System_Id { get; set; }
+        [Required]
         public string Brands { get; set; }
         public string Note { get; set; }
+        [Required]
         public System.DateTime Drop_Off_Date { get; set; }
+        [Required]
         public System.DateTime Pick_Up_Date { get; set; }
+        [Required]
         public string Quote { get; set; }
         public int CustomersClient_Id { get; set; }
     

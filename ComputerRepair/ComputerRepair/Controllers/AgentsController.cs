@@ -48,7 +48,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Agent_Id,First_Name,Last_Name,Employ_Id,Shift_Time,SystemsSystem_Id")] Agents agents)
+        public ActionResult Create([Bind(Include = "Agent_Id,First_Name,Last_Name,Employ_Id,Shift_Type,SystemsSystem_Id")] Agents agents)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Agent_Id,First_Name,Last_Name,Employ_Id,Shift_Time,SystemsSystem_Id")] Agents agents)
+        public ActionResult Edit([Bind(Include = "Agent_Id,First_Name,Last_Name,Employ_Id,Shift_Type,SystemsSystem_Id")] Agents agents)
         {
             if (ModelState.IsValid)
             {

@@ -23,7 +23,7 @@ namespace ComputerRepair
         [Required]
         public string Employ_Id { get; set; }
         [Required]
-        public System.DateTime Shift_Time { get; set; }
+        public string Shift_Type { get; set; }
         public Nullable<int> SystemsSystem_Id { get; set; }
     
         public virtual Systems System { get; set; }
