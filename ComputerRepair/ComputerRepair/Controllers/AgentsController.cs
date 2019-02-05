@@ -39,7 +39,7 @@ namespace ComputerRepair.Controllers
         // GET: Agents/Create
         public ActionResult Create()
         {
-            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Brands");
+            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "CustomersClient_Id");
             return View();
         }
 
