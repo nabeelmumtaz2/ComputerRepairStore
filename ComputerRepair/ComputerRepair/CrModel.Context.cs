@@ -28,5 +28,6 @@ namespace ComputerRepair
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Systems> Systems1 { get; set; }
         public virtual DbSet<Agents> Agents { get; set; }
+        public virtual DbSet<Inventory> Inventories { get; set; }
     }
 }

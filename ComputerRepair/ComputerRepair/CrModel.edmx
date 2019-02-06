@@ -91,6 +91,7 @@
             <End Role="Systems" EntitySet="Systems1" />
             <End Role="Agents" EntitySet="Agents" />
           </AssociationSet>
+          <EntitySet Name="Inventories" EntityType="Cr.Inventory" />
         </EntityContainer>
         <EntityType Name="Customers">
           <Key>
@@ -153,6 +154,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comp_Name" Type="String" Nullable="false" />
+          <Property Name="Comp_Check_In" Type="DateTime" Nullable="false" />
+          <Property Name="Comp_Check_Out" Type="DateTime" Nullable="false" />
+          <Property Name="Brand_Name" Type="String" Nullable="false" />
+          <Property Name="Is_Ram_Installed" Type="String" Nullable="false" />
+          <Property Name="Is_Power_Supply_Installed" Type="String" Nullable="false" />
+          <Property Name="Part_Type" Type="String" Nullable="false" />
+          <Property Name="IsSystem" Type="String" Nullable="false" />
+          <Property Name="Is_Complete_System" Type="String" Nullable="false" />
+          <Property Name="Serial_Number" Type="String" Nullable="false" />
+          <Property Name="Service_Number" Type="String" Nullable="false" />
+          <Property Name="Is_Asset_Tags" Type="String" Nullable="false" />
+          <Property Name="Asset_ID" Type="String" Nullable="false" />
+          <Property Name="Issues_Note" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
