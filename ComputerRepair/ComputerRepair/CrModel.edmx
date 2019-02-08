@@ -9,6 +9,7 @@
     <EntitySet Name="Customers" EntityType="Cr.Store.Customers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Systems1" EntityType="Cr.Store.Systems1" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Agents" EntityType="Cr.Store.Agents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inventories" EntityType="Cr.Store.Inventories" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CustomersSystem" Association="Cr.Store.CustomersSystem">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="System" EntitySet="Systems1" />
@@ -50,6 +51,26 @@
     <Property Name="Employ_Id" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Shift_Type" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SystemsSystem_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Inventories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comp_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Comp_Check_In" Type="datetime" Nullable="false" />
+    <Property Name="Comp_Check_Out" Type="datetime" Nullable="false" />
+    <Property Name="Brand_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Ram_Installed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Power_Supply_Installed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Part_Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsSystem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Complete_System" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Serial_Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Service_Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Asset_Tags" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Asset_ID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Issues_Note" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="CustomersSystem">
     <End Role="Customers" Type="Cr.Store.Customers" Multiplicity="1" />
@@ -213,6 +234,27 @@
           <ScalarProperty Name="Employ_Id" ColumnName="Employ_Id" />
           <ScalarProperty Name="Shift_Type" ColumnName="Shift_Type" />
           <ScalarProperty Name="SystemsSystem_Id" ColumnName="SystemsSystem_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="IsTypeOf(Cr.Inventory)">
+        <MappingFragment StoreEntitySet="Inventories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Comp_Name" ColumnName="Comp_Name" />
+          <ScalarProperty Name="Comp_Check_In" ColumnName="Comp_Check_In" />
+          <ScalarProperty Name="Comp_Check_Out" ColumnName="Comp_Check_Out" />
+          <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+          <ScalarProperty Name="Is_Ram_Installed" ColumnName="Is_Ram_Installed" />
+          <ScalarProperty Name="Is_Power_Supply_Installed" ColumnName="Is_Power_Supply_Installed" />
+          <ScalarProperty Name="Part_Type" ColumnName="Part_Type" />
+          <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+          <ScalarProperty Name="Is_Complete_System" ColumnName="Is_Complete_System" />
+          <ScalarProperty Name="Serial_Number" ColumnName="Serial_Number" />
+          <ScalarProperty Name="Service_Number" ColumnName="Service_Number" />
+          <ScalarProperty Name="Is_Asset_Tags" ColumnName="Is_Asset_Tags" />
+          <ScalarProperty Name="Asset_ID" ColumnName="Asset_ID" />
+          <ScalarProperty Name="Issues_Note" ColumnName="Issues_Note" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
