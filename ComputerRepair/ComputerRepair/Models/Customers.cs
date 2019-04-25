@@ -22,11 +22,11 @@ namespace ComputerRepair
         }
     
         public int Client_Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "You must provide a Name")]
         public string First_Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "You must provide a Last Name")]
         public string Last_Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "You must provide a Address")]
         public string Address { get; set; }
         [Required(ErrorMessage = "You must provide a phone number")]
         [Display(Name = "Home Phone")]

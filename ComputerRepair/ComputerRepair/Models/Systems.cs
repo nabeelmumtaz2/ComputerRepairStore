@@ -23,11 +23,14 @@ namespace ComputerRepair
     
         public int System_Id { get; set; }
         [Required]
+        [Display(Name = "Brand")]
         public string Brands { get; set; }
         public string Note { get; set; }
         [Required]
+        [Display(Name = "Drop off Date")]
         public System.DateTime Drop_Off_Date { get; set; }
         [Required]
+        [Display(Name = "Pick Up Date")]
         public System.DateTime Pick_Up_Date { get; set; }
         [Required]
         public string Quote { get; set; }

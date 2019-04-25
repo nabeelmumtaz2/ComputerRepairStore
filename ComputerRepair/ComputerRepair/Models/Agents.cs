@@ -17,12 +17,16 @@ namespace ComputerRepair
     {
         public int Agent_Id { get; set; }
         [Required]
+        [Display(Name = "First Name")]
         public string First_Name { get; set; }
         [Required]
+        [Display(Name = "Last Name")]
         public string Last_Name { get; set; }
         [Required]
+        [Display(Name = "Employer ID")]
         public string Employ_Id { get; set; }
         [Required]
+        [Display(Name = "Shift Type")]
         public string Shift_Type { get; set; }
         public Nullable<int> SystemsSystem_Id { get; set; }
     
