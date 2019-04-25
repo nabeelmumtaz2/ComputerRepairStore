@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/08/2019 18:31:51
+-- Date Created: 04/25/2019 17:38:10
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -36,6 +36,9 @@ IF OBJECT_ID(N'[dbo].[Systems1]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Agents]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Agents];
+GO
+IF OBJECT_ID(N'[dbo].[Inventories]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Inventories];
 GO
 
 -- --------------------------------------------------
@@ -82,14 +85,13 @@ CREATE TABLE [dbo].[Inventories] (
     [Comp_Check_In] datetime  NOT NULL,
     [Comp_Check_Out] datetime  NOT NULL,
     [Brand_Name] nvarchar(max)  NOT NULL,
-    [Is_Ram_Installed] nvarchar(max)  NOT NULL,
-    [Is_Power_Supply_Installed] nvarchar(max)  NOT NULL,
+    [Is_Ram_Installed] bit  NOT NULL,
+    [Is_Power_Supply_Installed] bit  NOT NULL,
     [Part_Type] nvarchar(max)  NOT NULL,
-    [IsSystem] nvarchar(max)  NOT NULL,
-    [Is_Complete_System] nvarchar(max)  NOT NULL,
+    [Is_Complete_System] bit  NOT NULL,
     [Serial_Number] nvarchar(max)  NOT NULL,
     [Service_Number] nvarchar(max)  NOT NULL,
-    [Is_Asset_Tags] nvarchar(max)  NOT NULL,
+    [Is_Asset_Tags] bit  NOT NULL,
     [Asset_ID] nvarchar(max)  NOT NULL,
     [Issues_Note] nvarchar(max)  NOT NULL
 );

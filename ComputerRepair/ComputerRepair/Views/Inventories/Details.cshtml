@@ -1,0 +1,122 @@
+﻿@model ComputerRepair.Inventory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comp_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comp_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comp_Check_In)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comp_Check_In)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comp_Check_Out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comp_Check_Out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Ram_Installed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Ram_Installed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Power_Supply_Installed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Power_Supply_Installed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Part_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Part_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Complete_System)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Complete_System)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serial_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serial_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Asset_Tags)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Asset_Tags)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asset_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asset_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Issues_Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Issues_Note)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
