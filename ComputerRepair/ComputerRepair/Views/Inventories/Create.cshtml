@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Comp_Check_In, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Comp_Check_In, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Comp_Check_In, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.Comp_Check_In, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Comp_Check_Out, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Comp_Check_Out, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Comp_Check_Out, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.Comp_Check_Out, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -142,3 +142,8 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script type="text/javascript">
+    $(function () { // will trigger when the document is ready
+       $('.datepicker').datepicker(); //Initialise any date pickers
+    });
+</script>
