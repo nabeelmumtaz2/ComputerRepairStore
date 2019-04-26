@@ -48,10 +48,20 @@ namespace ComputerRepair.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number")] Customers customers)
         {
+            var phoneExist = db.Customers.Where(x => x.Phone_Number == customers.Phone_Number).FirstOrDefault() ;
+                                         
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customers);
-                db.SaveChanges();
+                
+                if (phoneExist !=null)
+                {
+                    
+                }
+                else
+                {
+                    db.Customers.Add(customers);
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
 
