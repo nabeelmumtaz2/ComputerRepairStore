@@ -55,7 +55,7 @@ namespace ComputerRepair.Controllers
                 
                 if (phoneExist !=null)
                 {
-                    
+                    TempData["Exist"] = "Client already exist";
                 }
                 else
                 {
