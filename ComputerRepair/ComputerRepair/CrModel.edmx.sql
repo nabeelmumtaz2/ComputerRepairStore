@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/27/2019 22:18:16
+-- Date Created: 04/27/2019 23:18:17
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -51,7 +51,16 @@ CREATE TABLE [dbo].[Customers] (
     [First_Name] nvarchar(max)  NOT NULL,
     [Last_Name] nvarchar(max)  NOT NULL,
     [Address] nvarchar(max)  NOT NULL,
-    [Phone_Number] nvarchar(max)  NOT NULL
+    [Phone_Number] nvarchar(max)  NOT NULL,
+    [Email] nvarchar(max)  NOT NULL,
+    [Company] nvarchar(max)  NOT NULL,
+    [Mobile] nvarchar(max)  NOT NULL,
+    [Line_1] nvarchar(max)  NOT NULL,
+    [Line_2] nvarchar(max)  NOT NULL,
+    [City] nvarchar(max)  NOT NULL,
+    [Post_Code] nvarchar(max)  NOT NULL,
+    [Country] nvarchar(max)  NOT NULL,
+    [Source] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -70,7 +79,16 @@ CREATE TABLE [dbo].[Systems1] (
     [IsMonitor] bit  NULL,
     [Tablet] bit  NULL,
     [IsCell_Phone] bit  NULL,
-    [Mac_Number] nvarchar(max)  NOT NULL
+    [Mac_Number] nvarchar(max)  NOT NULL,
+    [Priority] nvarchar(max)  NULL,
+    [Currect_Status] nvarchar(max)  NULL,
+    [Job_Completed] nvarchar(max)  NOT NULL,
+    [Paid] bit  NULL,
+    [Data_BackUp_Required] bit  NULL,
+    [Login_Details] nvarchar(max)  NOT NULL,
+    [Missing_Adapter] bit  NOT NULL,
+    [Missing_Keys] bit  NOT NULL,
+    [Broken_Screen] bit  NOT NULL
 );
 GO
 

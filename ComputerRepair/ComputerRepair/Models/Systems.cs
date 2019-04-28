@@ -49,6 +49,24 @@ namespace ComputerRepair
         [Required]
         [Display(Name = "MAC Address")]
         public string Mac_Number { get; set; }
+        [Display(Name = "Priority")]
+        public string Priority { get; set; }
+        [Display(Name = "Priority")]
+        public string Currect_Status { get; set; }
+        [Display(Name = "Job_Completed")]
+        public string Job_Completed { get; set; }
+        [Display(Name = "Paid")]
+        public bool Paid { get; set; }
+        [Display(Name = "Data BackUp Required")]
+        public bool Data_BackUp_Required { get; set; }
+        [Display(Name = "Login Details")]
+        public string Login_Details { get; set; }
+        [Display(Name = "Missing Adapter")]
+        public bool Missing_Adapter { get; set; }
+        [Display(Name = "Missing Keys")]
+        public bool Missing_Keys { get; set; }
+        [Display(Name = "Broken Screen")]
+        public bool Broken_Screen { get; set; }
 
         public int CustomersClient_Id { get; set; }
     

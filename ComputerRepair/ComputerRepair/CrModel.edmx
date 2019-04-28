@@ -28,6 +28,15 @@
     <Property Name="Last_Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Phone_Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Company" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Line_1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Line_2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Post_Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Systems1">
     <Key>
@@ -47,6 +56,15 @@
     <Property Name="Tablet" Type="bit" Nullable="true" />
     <Property Name="IsCell_Phone" Type="bit" Nullable="true" />
     <Property Name="Mac_Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Priority" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Currect_Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Job_Completed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Paid" Type="bit" Nullable="true" />
+    <Property Name="Data_BackUp_Required" Type="bit" Nullable="true" />
+    <Property Name="Login_Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Missing_Adapter" Type="bit" Nullable="false" />
+    <Property Name="Missing_Keys" Type="bit" Nullable="false" />
+    <Property Name="Broken_Screen" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Agents">
     <Key>
@@ -132,6 +150,15 @@
           <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Phone_Number" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Systems" Relationship="Cr.CustomersSystem" FromRole="Customers" ToRole="System" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Company" Type="String" Nullable="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" />
+          <Property Name="Line_1" Type="String" Nullable="false" />
+          <Property Name="Line_2" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="Post_Code" Type="String" Nullable="false" />
+          <Property Name="Country" Type="String" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Systems">
           <Key>
@@ -153,6 +180,15 @@
           <Property Name="Tablet" Type="Boolean" Nullable="true" />
           <Property Name="IsCell_Phone" Type="Boolean" Nullable="true" />
           <Property Name="Mac_Number" Type="String" Nullable="false" />
+          <Property Name="Priority" Type="String" Nullable="true" />
+          <Property Name="Currect_Status" Type="String" Nullable="true" />
+          <Property Name="Job_Completed" Type="String" Nullable="false" />
+          <Property Name="Paid" Type="Boolean" Nullable="true" />
+          <Property Name="Data_BackUp_Required" Type="Boolean" Nullable="true" />
+          <Property Name="Login_Details" Type="String" Nullable="false" />
+          <Property Name="Missing_Adapter" Type="Boolean" Nullable="false" />
+          <Property Name="Missing_Keys" Type="Boolean" Nullable="false" />
+          <Property Name="Broken_Screen" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="CustomersSystem">
           <End Type="Cr.Customers" Role="Customers" Multiplicity="1" />
@@ -225,6 +261,15 @@
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Line_1" ColumnName="Line_1" />
+          <ScalarProperty Name="Line_2" ColumnName="Line_2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Post_Code" ColumnName="Post_Code" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -245,6 +290,15 @@
           <ScalarProperty Name="Tablet" ColumnName="Tablet" />
           <ScalarProperty Name="IsCell_Phone" ColumnName="IsCell_Phone" />
           <ScalarProperty Name="Mac_Number" ColumnName="Mac_Number" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Currect_Status" ColumnName="Currect_Status" />
+          <ScalarProperty Name="Job_Completed" ColumnName="Job_Completed" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Data_BackUp_Required" ColumnName="Data_BackUp_Required" />
+          <ScalarProperty Name="Login_Details" ColumnName="Login_Details" />
+          <ScalarProperty Name="Missing_Adapter" ColumnName="Missing_Adapter" />
+          <ScalarProperty Name="Missing_Keys" ColumnName="Missing_Keys" />
+          <ScalarProperty Name="Broken_Screen" ColumnName="Broken_Screen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

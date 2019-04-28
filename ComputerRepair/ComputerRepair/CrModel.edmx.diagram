@@ -10,7 +10,7 @@
         <AssociationConnector Association="Cr.CustomersSystem" />
         <EntityTypeShape EntityType="Cr.Agents" Width="1.5" PointX="6.875" PointY="1.125" />
         <AssociationConnector Association="Cr.SystemsAgents" />
-        <EntityTypeShape EntityType="Cr.Inventory" Width="1.875" PointX="2.375" PointY="3.625" />
+        <EntityTypeShape EntityType="Cr.Inventory" Width="1.875" PointX="2.125" PointY="5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
