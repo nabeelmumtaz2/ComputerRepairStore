@@ -95,9 +95,18 @@
             @Html.DisplayFor(modelItem => item.Issues_Note)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="@Url.Action("Edit", "Inventories", new { id = item.Id  })" class="btn btn-primary">
+                Edit
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Details", "Inventories", new { id = item.Id  })" class="btn btn-info">
+                Details
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Delete", "Inventories", new { id = item.Id  })" class="btn btn-danger">
+                Delete
+                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            </a>
         </td>
     </tr>
 }

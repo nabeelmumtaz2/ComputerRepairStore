@@ -49,9 +49,19 @@
         </td>
         <td>
 
-            @Html.ActionLink("Edit", "Edit", new { id=item.Agent_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Agent_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Agent_Id })
+            <a href="@Url.Action("Edit", "Agents", new { id = item.Agent_Id })" class="btn btn-primary">
+                Edit
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Details", "Agents", new { id = item.Agent_Id })" class="btn btn-info">
+                Details
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Delete", "Agents", new { id = item.Agent_Id })" class="btn btn-danger">
+                Delete
+                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            </a>
+            
         </td>
     </tr>
 }
