@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/27/2019 21:27:02
+-- Date Created: 04/27/2019 22:18:16
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE [dbo].[Inventories] (
     [Asset_ID] nvarchar(max)  NULL,
     [Issues_Note] nvarchar(max)  NULL,
     [Imei_Number] nvarchar(max)  NULL,
-    [Is_Broken_Fan] nvarchar(max)  NULL
+    [Is_Broken_Fan] bit  NULL
 );
 GO
 

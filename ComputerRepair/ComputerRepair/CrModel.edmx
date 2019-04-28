@@ -78,7 +78,7 @@
     <Property Name="Asset_ID" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Issues_Note" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Imei_Number" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Is_Broken_Fan" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Is_Broken_Fan" Type="bit" Nullable="true" />
   </EntityType>
   <Association Name="CustomersSystem">
     <End Role="Customers" Type="Cr.Store.Customers" Multiplicity="1" />
@@ -209,7 +209,7 @@
           <Property Name="Asset_ID" Type="String" Nullable="true" />
           <Property Name="Issues_Note" Type="String" Nullable="true" />
           <Property Name="Imei_Number" Type="String" Nullable="true" />
-          <Property Name="Is_Broken_Fan" Type="String" Nullable="true" />
+          <Property Name="Is_Broken_Fan" Type="Boolean" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

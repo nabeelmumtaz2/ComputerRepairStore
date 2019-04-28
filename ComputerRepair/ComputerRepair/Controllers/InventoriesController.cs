@@ -46,7 +46,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Comp_Name,Comp_Check_In,Comp_Check_Out,Brand_Name,Is_Ram_Installed,Is_Power_Supply_Installed,Part_Type,Is_Complete_System,Serial_Number,Service_Number,Is_Asset_Tags,Asset_ID,Issues_Note")] Inventory inventory)
+        public ActionResult Create([Bind(Include = "Id,Comp_Name,Comp_Check_In,Comp_Check_Out,Brand_Name,Is_Ram_Installed,Is_Power_Supply_Installed,Part_Type,Is_Complete_System,Serial_Number,Service_Number,Is_Asset_Tags,Asset_ID,Issues_Note,Imei_Number,Is_Broken_Fan")] Inventory inventory)
         {
             if (ModelState.IsValid)
             {

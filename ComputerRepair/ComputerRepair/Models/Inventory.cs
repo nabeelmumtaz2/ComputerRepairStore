@@ -27,8 +27,6 @@ namespace ComputerRepair
         public bool Is_Ram_Installed { get; set; }
         [Display(Name = "Power Supply Installed")]
         public bool Is_Power_Supply_Installed { get; set; }
-        [Display(Name = "Broken Fan")]
-        public bool Is_Broken_Fan { get; set; }
         [Display(Name = "Part Type")]
         public string Part_Type { get; set; }
         [Display(Name = "Complete System")]
@@ -43,7 +41,9 @@ namespace ComputerRepair
         public string Asset_ID { get; set; }
         [Display(Name = "Issues Note")]
         public string Issues_Note { get; set; }
+        [Display(Name = "Broken Fan")]
+        public bool Is_Broken_Fan { get; set; }
         [Display(Name = "Imei Number")]
-        public string Imei_number { get; set; }
+        public string Imei_Number { get; set; }
     }
 }
