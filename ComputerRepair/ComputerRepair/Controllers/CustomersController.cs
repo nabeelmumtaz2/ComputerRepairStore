@@ -46,7 +46,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number")] Customers customers)
+        public ActionResult Create([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number,Email,Company,Mobile,Line_1,Line_2,City,Post_Code,Country,Source")] Customers customers)
         {
             var phoneExist = db.Customers.Where(x => x.Phone_Number == customers.Phone_Number).FirstOrDefault() ;
                                          
@@ -88,7 +88,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number")] Customers customers)
+        public ActionResult Edit([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number,Email,Company,Mobile,Line_1,Line_2,City,Post_Code,Country,Source")] Customers customers)
         {
             if (ModelState.IsValid)
             {
