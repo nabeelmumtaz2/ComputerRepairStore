@@ -51,7 +51,7 @@ namespace ComputerRepair
         public string Mac_Number { get; set; }
         [Display(Name = "Priority")]
         public string Priority { get; set; }
-        [Display(Name = "Priority")]
+        [Display(Name = "Currect Status")]
         public string Currect_Status { get; set; }
         [Display(Name = "Job_Completed")]
         public string Job_Completed { get; set; }
