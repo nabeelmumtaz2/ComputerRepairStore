@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/25/2019 17:38:10
+-- Date Created: 04/27/2019 21:27:02
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -59,11 +59,18 @@ GO
 CREATE TABLE [dbo].[Systems1] (
     [System_Id] int IDENTITY(1,1) NOT NULL,
     [Brands] nvarchar(max)  NOT NULL,
-    [Note] nvarchar(max)  NOT NULL,
+    [Note] nvarchar(max)  NULL,
     [Drop_Off_Date] datetime  NOT NULL,
     [Pick_Up_Date] datetime  NOT NULL,
     [Quote] nvarchar(max)  NOT NULL,
-    [CustomersClient_Id] int  NOT NULL
+    [CustomersClient_Id] int  NOT NULL,
+    [IsLaptop] bit  NULL,
+    [IsDesktop] bit  NULL,
+    [Is_All_In_One] bit  NULL,
+    [IsMonitor] bit  NULL,
+    [Tablet] bit  NULL,
+    [IsCell_Phone] bit  NULL,
+    [Mac_Number] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -85,15 +92,17 @@ CREATE TABLE [dbo].[Inventories] (
     [Comp_Check_In] datetime  NOT NULL,
     [Comp_Check_Out] datetime  NOT NULL,
     [Brand_Name] nvarchar(max)  NOT NULL,
-    [Is_Ram_Installed] bit  NOT NULL,
-    [Is_Power_Supply_Installed] bit  NOT NULL,
+    [Is_Ram_Installed] bit  NULL,
+    [Is_Power_Supply_Installed] bit  NULL,
     [Part_Type] nvarchar(max)  NOT NULL,
-    [Is_Complete_System] bit  NOT NULL,
+    [Is_Complete_System] bit  NULL,
     [Serial_Number] nvarchar(max)  NOT NULL,
     [Service_Number] nvarchar(max)  NOT NULL,
-    [Is_Asset_Tags] bit  NOT NULL,
-    [Asset_ID] nvarchar(max)  NOT NULL,
-    [Issues_Note] nvarchar(max)  NOT NULL
+    [Is_Asset_Tags] bit  NULL,
+    [Asset_ID] nvarchar(max)  NULL,
+    [Issues_Note] nvarchar(max)  NULL,
+    [Imei_Number] nvarchar(max)  NULL,
+    [Is_Broken_Fan] nvarchar(max)  NULL
 );
 GO
 

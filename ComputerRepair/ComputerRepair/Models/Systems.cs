@@ -34,6 +34,22 @@ namespace ComputerRepair
         public System.DateTime Pick_Up_Date { get; set; }
         [Required]
         public string Quote { get; set; }
+        [Display(Name = "Laptop")]
+        public bool IsLaptop { get; set; }
+        [Display(Name = "Desktop")]
+        public bool IsDesktop { get; set; }
+        [Display(Name = "All In One")]
+        public bool Is_All_In_One { get; set; }
+        [Display(Name = "Monitor")]
+        public bool IsMonitor { get; set; }
+        [Display(Name = "Tablet")]
+        public bool Tablet { get; set; }
+        [Display(Name = "Cell Phone")]
+        public bool IsCell_Phone { get; set; }
+        [Required]
+        [Display(Name = "MAC Address")]
+        public string Mac_Number { get; set; }
+
         public int CustomersClient_Id { get; set; }
     
         public virtual Customers Customer { get; set; }

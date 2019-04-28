@@ -35,11 +35,18 @@
     </Key>
     <Property Name="System_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Brands" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Drop_Off_Date" Type="datetime" Nullable="false" />
     <Property Name="Pick_Up_Date" Type="datetime" Nullable="false" />
     <Property Name="Quote" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CustomersClient_Id" Type="int" Nullable="false" />
+    <Property Name="IsLaptop" Type="bit" Nullable="true" />
+    <Property Name="IsDesktop" Type="bit" Nullable="true" />
+    <Property Name="Is_All_In_One" Type="bit" Nullable="true" />
+    <Property Name="IsMonitor" Type="bit" Nullable="true" />
+    <Property Name="Tablet" Type="bit" Nullable="true" />
+    <Property Name="IsCell_Phone" Type="bit" Nullable="true" />
+    <Property Name="Mac_Number" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Agents">
     <Key>
@@ -61,15 +68,17 @@
     <Property Name="Comp_Check_In" Type="datetime" Nullable="false" />
     <Property Name="Comp_Check_Out" Type="datetime" Nullable="false" />
     <Property Name="Brand_Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Is_Ram_Installed" Type="bit" Nullable="false" />
-    <Property Name="Is_Power_Supply_Installed" Type="bit" Nullable="false" />
+    <Property Name="Is_Ram_Installed" Type="bit" Nullable="true" />
+    <Property Name="Is_Power_Supply_Installed" Type="bit" Nullable="true" />
     <Property Name="Part_Type" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Is_Complete_System" Type="bit" Nullable="false" />
+    <Property Name="Is_Complete_System" Type="bit" Nullable="true" />
     <Property Name="Serial_Number" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Service_Number" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Is_Asset_Tags" Type="bit" Nullable="false" />
-    <Property Name="Asset_ID" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Issues_Note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Is_Asset_Tags" Type="bit" Nullable="true" />
+    <Property Name="Asset_ID" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Issues_Note" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Imei_Number" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Is_Broken_Fan" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <Association Name="CustomersSystem">
     <End Role="Customers" Type="Cr.Store.Customers" Multiplicity="1" />
@@ -130,13 +139,20 @@
           </Key>
           <Property Name="System_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Brands" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Drop_Off_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Pick_Up_Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Quote" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Customer" Relationship="Cr.CustomersSystem" FromRole="System" ToRole="Customers" />
           <Property Name="CustomersClient_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Agents" Relationship="Cr.SystemsAgents" FromRole="Systems" ToRole="Agents" />
+          <Property Name="IsLaptop" Type="Boolean" Nullable="true" />
+          <Property Name="IsDesktop" Type="Boolean" Nullable="true" />
+          <Property Name="Is_All_In_One" Type="Boolean" Nullable="true" />
+          <Property Name="IsMonitor" Type="Boolean" Nullable="true" />
+          <Property Name="Tablet" Type="Boolean" Nullable="true" />
+          <Property Name="IsCell_Phone" Type="Boolean" Nullable="true" />
+          <Property Name="Mac_Number" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="CustomersSystem">
           <End Type="Cr.Customers" Role="Customers" Multiplicity="1" />
@@ -183,15 +199,17 @@
           <Property Name="Comp_Check_In" Type="DateTime" Nullable="false" />
           <Property Name="Comp_Check_Out" Type="DateTime" Nullable="false" />
           <Property Name="Brand_Name" Type="String" Nullable="false" />
-          <Property Name="Is_Ram_Installed" Type="Boolean" Nullable="false" />
-          <Property Name="Is_Power_Supply_Installed" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Ram_Installed" Type="Boolean" Nullable="true" />
+          <Property Name="Is_Power_Supply_Installed" Type="Boolean" Nullable="true" />
           <Property Name="Part_Type" Type="String" Nullable="false" />
-          <Property Name="Is_Complete_System" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Complete_System" Type="Boolean" Nullable="true" />
           <Property Name="Serial_Number" Type="String" Nullable="false" />
           <Property Name="Service_Number" Type="String" Nullable="false" />
-          <Property Name="Is_Asset_Tags" Type="Boolean" Nullable="false" />
-          <Property Name="Asset_ID" Type="String" Nullable="false" />
-          <Property Name="Issues_Note" Type="String" Nullable="false" />
+          <Property Name="Is_Asset_Tags" Type="Boolean" Nullable="true" />
+          <Property Name="Asset_ID" Type="String" Nullable="true" />
+          <Property Name="Issues_Note" Type="String" Nullable="true" />
+          <Property Name="Imei_Number" Type="String" Nullable="true" />
+          <Property Name="Is_Broken_Fan" Type="String" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -220,6 +238,13 @@
           <ScalarProperty Name="Pick_Up_Date" ColumnName="Pick_Up_Date" />
           <ScalarProperty Name="Quote" ColumnName="Quote" />
           <ScalarProperty Name="CustomersClient_Id" ColumnName="CustomersClient_Id" />
+          <ScalarProperty Name="IsLaptop" ColumnName="IsLaptop" />
+          <ScalarProperty Name="IsDesktop" ColumnName="IsDesktop" />
+          <ScalarProperty Name="Is_All_In_One" ColumnName="Is_All_In_One" />
+          <ScalarProperty Name="IsMonitor" ColumnName="IsMonitor" />
+          <ScalarProperty Name="Tablet" ColumnName="Tablet" />
+          <ScalarProperty Name="IsCell_Phone" ColumnName="IsCell_Phone" />
+          <ScalarProperty Name="Mac_Number" ColumnName="Mac_Number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -252,6 +277,8 @@
           <ScalarProperty Name="Is_Asset_Tags" ColumnName="Is_Asset_Tags" />
           <ScalarProperty Name="Asset_ID" ColumnName="Asset_ID" />
           <ScalarProperty Name="Issues_Note" ColumnName="Issues_Note" />
+          <ScalarProperty Name="Imei_Number" ColumnName="Imei_Number" />
+          <ScalarProperty Name="Is_Broken_Fan" ColumnName="Is_Broken_Fan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

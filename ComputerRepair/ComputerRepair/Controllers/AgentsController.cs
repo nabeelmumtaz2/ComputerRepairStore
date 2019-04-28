@@ -40,7 +40,7 @@ namespace ComputerRepair.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Brands");
+            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Mac_Number");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace ComputerRepair.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Brands", agents.SystemsSystem_Id);
+            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Mac_Number", agents.SystemsSystem_Id);
             return View(agents);
         }
 
