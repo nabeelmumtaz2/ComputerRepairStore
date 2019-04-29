@@ -48,7 +48,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "System_Id,Brands,Note,Drop_Off_Date,Pick_Up_Date,Quote,CustomersClient_Id,IsLaptop,IsDesktop,Is_All_In_One, IsMonitor,Tablet,IsCell_Phone,Mac_Number")] Systems systems)
+        public ActionResult Create([Bind(Include = "System_Id,Brands,Note,Drop_Off_Date,Pick_Up_Date,Quote,CustomersClient_Id,IsLaptop,IsDesktop,Is_All_In_One, IsMonitor,Tablet,IsCell_Phone,Mac_Number,Priority,Currect_Status,Job_Completed,Paid,Data_BackUp_Required,Login_Details,Missing_Adapter,Missing_Keys,Broken_Screen")] Systems systems)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace ComputerRepair.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "System_Id,Brands,Note,Drop_Off_Date,Pick_Up_Date,Quote,CustomersClient_Id")] Systems systems)
+        public ActionResult Edit([Bind(Include = "System_Id, Brands, Note, Drop_Off_Date, Pick_Up_Date, Quote, CustomersClient_Id, IsLaptop, IsDesktop, Is_All_In_One, IsMonitor, Tablet, IsCell_Phone, Mac_Number, Priority, Currect_Status, Job_Completed, Paid, Data_BackUp_Required, Login_Details, Missing_Adapter, Missing_Keys, Broken_Screen")] Systems systems)
         {
             if (ModelState.IsValid)
             {

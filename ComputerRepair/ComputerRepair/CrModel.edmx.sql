@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/27/2019 23:18:17
+-- Date Created: 04/28/2019 23:56:34
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE [dbo].[Systems1] (
     [Mac_Number] nvarchar(max)  NOT NULL,
     [Priority] nvarchar(max)  NULL,
     [Currect_Status] nvarchar(max)  NULL,
-    [Job_Completed] nvarchar(max)  NOT NULL,
+    [Job_Completed] bit  NULL,
     [Paid] bit  NULL,
     [Data_BackUp_Required] bit  NULL,
     [Login_Details] nvarchar(max)  NOT NULL,

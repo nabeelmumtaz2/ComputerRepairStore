@@ -50,11 +50,12 @@ namespace ComputerRepair
         [Display(Name = "MAC Address")]
         public string Mac_Number { get; set; }
         [Display(Name = "Priority")]
+        [Required]
         public string Priority { get; set; }
         [Display(Name = "Currect Status")]
         public string Currect_Status { get; set; }
         [Display(Name = "Job_Completed")]
-        public string Job_Completed { get; set; }
+        public bool Job_Completed { get; set; }
         [Display(Name = "Paid")]
         public bool Paid { get; set; }
         [Display(Name = "Data BackUp Required")]

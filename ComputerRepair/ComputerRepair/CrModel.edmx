@@ -58,7 +58,7 @@
     <Property Name="Mac_Number" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Priority" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Currect_Status" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Job_Completed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Job_Completed" Type="bit" Nullable="true" />
     <Property Name="Paid" Type="bit" Nullable="true" />
     <Property Name="Data_BackUp_Required" Type="bit" Nullable="true" />
     <Property Name="Login_Details" Type="nvarchar(max)" Nullable="false" />
@@ -182,7 +182,7 @@
           <Property Name="Mac_Number" Type="String" Nullable="false" />
           <Property Name="Priority" Type="String" Nullable="true" />
           <Property Name="Currect_Status" Type="String" Nullable="true" />
-          <Property Name="Job_Completed" Type="String" Nullable="false" />
+          <Property Name="Job_Completed" Type="Boolean" Nullable="true" />
           <Property Name="Paid" Type="Boolean" Nullable="true" />
           <Property Name="Data_BackUp_Required" Type="Boolean" Nullable="true" />
           <Property Name="Login_Details" Type="String" Nullable="false" />
