@@ -33,14 +33,23 @@ namespace ComputerRepair
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string Phone_Number { get; set; }
+        [Display(Name = "Email")]
         public string Email { get; set; }
+        [Display(Name = "Company")]
         public string Company { get; set; }
+        [Display(Name = "Mobile")]
         public string Mobile { get; set; }
+        [Display(Name = "Line 1")]
         public string Line_1 { get; set; }
+        [Display(Name = "Line 2")]
         public string Line_2 { get; set; }
+        [Display(Name = "City")]
         public string City { get; set; }
+        [Display(Name = "Postal Code")]
         public string Post_Code { get; set; }
+        [Display(Name = "Country")]
         public string Country { get; set; }
+        [Display(Name = "Source")]
         public string Source { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Systems> Systems { get; set; }

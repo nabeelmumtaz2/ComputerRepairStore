@@ -29,40 +29,63 @@
         <th>
             Phone Number
         </th>
-        <th></th>
+        <th>
+        Mobile
+        </th>
+        <th>
+        Postal Code
+        </th>
+        <th>
+        Country
+        </th>
+        <th>
+        Email
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.First_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Last_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone_Number)
-            </td>
-            <td>
-                <a href="@Url.Action("Edit", "Customers", new { id = item.Client_Id })" class="btn btn-primary">
-                    Edit
-                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                </a>
-                <a href="@Url.Action("Details", "Customers", new { id = item.Client_Id })" class="btn btn-info">
-                    Details
-                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                </a>
-                <a href="@Url.Action("Delete", "Customers", new { id = item.Client_Id })" class="btn btn-danger">
-                    Delete
-                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-                </a>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Customers", new { id = item.Client_Id })" class="btn btn-primary">
+                Edit
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Details", "Customers", new { id = item.Client_Id })" class="btn btn-info">
+                Details
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Delete", "Customers", new { id = item.Client_Id })" class="btn btn-danger">
+                Delete
+                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            </a>
 
-            </td>
-        </tr>
+        </td>
+    </tr>
     }
 
 </table>
