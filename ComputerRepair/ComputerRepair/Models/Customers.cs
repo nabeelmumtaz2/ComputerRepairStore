@@ -34,6 +34,7 @@ namespace ComputerRepair
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string Phone_Number { get; set; }
         [Display(Name = "Email")]
+        [Required(ErrorMessage = "You must provide a Email")]
         public string Email { get; set; }
         [Display(Name = "Company")]
         public string Company { get; set; }
@@ -43,10 +44,13 @@ namespace ComputerRepair
         public string Line_1 { get; set; }
         [Display(Name = "Line 2")]
         public string Line_2 { get; set; }
+        [Required(ErrorMessage = "You must provide a City")]
         [Display(Name = "City")]
         public string City { get; set; }
+        [Required(ErrorMessage = "You must provide a Post Code")]
         [Display(Name = "Postal Code")]
         public string Post_Code { get; set; }
+        [Required(ErrorMessage = "You must provide a Country")]
         [Display(Name = "Country")]
         public string Country { get; set; }
         [Display(Name = "Source")]

@@ -29,14 +29,14 @@
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Phone_Number" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Company" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Mobile" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Line_1" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Line_2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Company" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobile" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Line_1" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Line_2" Type="nvarchar(max)" Nullable="true" />
     <Property Name="City" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Post_Code" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Systems1">
     <Key>
@@ -151,14 +151,14 @@
           <Property Name="Phone_Number" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Systems" Relationship="Cr.CustomersSystem" FromRole="Customers" ToRole="System" />
           <Property Name="Email" Type="String" Nullable="false" />
-          <Property Name="Company" Type="String" Nullable="false" />
-          <Property Name="Mobile" Type="String" Nullable="false" />
-          <Property Name="Line_1" Type="String" Nullable="false" />
-          <Property Name="Line_2" Type="String" Nullable="false" />
+          <Property Name="Company" Type="String" Nullable="true" />
+          <Property Name="Mobile" Type="String" Nullable="true" />
+          <Property Name="Line_1" Type="String" Nullable="true" />
+          <Property Name="Line_2" Type="String" Nullable="true" />
           <Property Name="City" Type="String" Nullable="false" />
           <Property Name="Post_Code" Type="String" Nullable="false" />
           <Property Name="Country" Type="String" Nullable="false" />
-          <Property Name="Source" Type="String" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Systems">
           <Key>

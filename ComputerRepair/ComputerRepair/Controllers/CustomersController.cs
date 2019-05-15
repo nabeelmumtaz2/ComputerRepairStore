@@ -48,12 +48,12 @@ namespace ComputerRepair.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Client_Id,First_Name,Last_Name,Address,Phone_Number,Email,Company,Mobile,Line_1,Line_2,City,Post_Code,Country,Source")] Customers customers)
         {
-            var phoneExist = db.Customers.Where(x => x.Phone_Number == customers.Phone_Number).FirstOrDefault() ;
+            var emailExist = db.Customers.Where(x => x.Email == customers.Email).FirstOrDefault() ;
                                          
             if (ModelState.IsValid)
             {
                 
-                if (phoneExist !=null)
+                if (emailExist != null)
                 {
                     TempData["Exist"] = "Client already exist";
                 }
