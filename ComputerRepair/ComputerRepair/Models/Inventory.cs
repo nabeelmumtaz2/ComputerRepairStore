@@ -18,9 +18,12 @@ namespace ComputerRepair
         [Display(Name = "Name")]
         public string Comp_Name{ get; set; }
         [Display(Name = "Check In")]
+        [Required]
         public System.DateTime Comp_Check_In { get; set; }
         [Display(Name = "Check Out")]
+        [Required]
         public System.DateTime Comp_Check_Out { get; set; }
+        [Required]
         [Display(Name = "Brand Name")]
         public string Brand_Name { get; set; }
         [Display(Name = "Ram Installed")]
@@ -28,9 +31,11 @@ namespace ComputerRepair
         [Display(Name = "Power Supply Installed")]
         public bool Is_Power_Supply_Installed { get; set; }
         [Display(Name = "Part Type")]
+        [Required]
         public string Part_Type { get; set; }
         [Display(Name = "Complete System")]
         public bool Is_Complete_System { get; set; }
+        [Required]
         [Display(Name = "Serial Number")]
         public string Serial_Number { get; set; }
         [Display(Name = "Service Number")]

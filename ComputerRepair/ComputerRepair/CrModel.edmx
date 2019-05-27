@@ -61,10 +61,10 @@
     <Property Name="Job_Completed" Type="bit" Nullable="true" />
     <Property Name="Paid" Type="bit" Nullable="true" />
     <Property Name="Data_BackUp_Required" Type="bit" Nullable="true" />
-    <Property Name="Login_Details" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Missing_Adapter" Type="bit" Nullable="false" />
-    <Property Name="Missing_Keys" Type="bit" Nullable="false" />
-    <Property Name="Broken_Screen" Type="bit" Nullable="false" />
+    <Property Name="Login_Details" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Missing_Adapter" Type="bit" Nullable="true" />
+    <Property Name="Missing_Keys" Type="bit" Nullable="true" />
+    <Property Name="Broken_Screen" Type="bit" Nullable="true" />
   </EntityType>
   <EntityType Name="Agents">
     <Key>
@@ -80,18 +80,19 @@
   <EntityType Name="Inventories">
     <Key>
       <PropertyRef Name="Id" />
+      <PropertyRef Name="Is_Ram_Installed" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Comp_Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Comp_Check_In" Type="datetime" Nullable="false" />
     <Property Name="Comp_Check_Out" Type="datetime" Nullable="false" />
     <Property Name="Brand_Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Is_Ram_Installed" Type="bit" Nullable="true" />
+    <Property Name="Is_Ram_Installed" Type="bit" Nullable="false" />
     <Property Name="Is_Power_Supply_Installed" Type="bit" Nullable="true" />
     <Property Name="Part_Type" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Is_Complete_System" Type="bit" Nullable="true" />
     <Property Name="Serial_Number" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Service_Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Service_Number" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Is_Asset_Tags" Type="bit" Nullable="true" />
     <Property Name="Asset_ID" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Issues_Note" Type="nvarchar(max)" Nullable="true" />
@@ -185,10 +186,10 @@
           <Property Name="Job_Completed" Type="Boolean" Nullable="true" />
           <Property Name="Paid" Type="Boolean" Nullable="true" />
           <Property Name="Data_BackUp_Required" Type="Boolean" Nullable="true" />
-          <Property Name="Login_Details" Type="String" Nullable="false" />
-          <Property Name="Missing_Adapter" Type="Boolean" Nullable="false" />
-          <Property Name="Missing_Keys" Type="Boolean" Nullable="false" />
-          <Property Name="Broken_Screen" Type="Boolean" Nullable="false" />
+          <Property Name="Login_Details" Type="String" Nullable="true" />
+          <Property Name="Missing_Adapter" Type="Boolean" Nullable="true" />
+          <Property Name="Missing_Keys" Type="Boolean" Nullable="true" />
+          <Property Name="Broken_Screen" Type="Boolean" Nullable="true" />
         </EntityType>
         <Association Name="CustomersSystem">
           <End Type="Cr.Customers" Role="Customers" Multiplicity="1" />
@@ -229,18 +230,19 @@
         <EntityType Name="Inventory">
           <Key>
             <PropertyRef Name="Id" />
+            <PropertyRef Name="Is_Ram_Installed" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Comp_Name" Type="String" Nullable="false" />
           <Property Name="Comp_Check_In" Type="DateTime" Nullable="false" />
           <Property Name="Comp_Check_Out" Type="DateTime" Nullable="false" />
           <Property Name="Brand_Name" Type="String" Nullable="false" />
-          <Property Name="Is_Ram_Installed" Type="Boolean" Nullable="true" />
+          <Property Name="Is_Ram_Installed" Type="Boolean" Nullable="false" />
           <Property Name="Is_Power_Supply_Installed" Type="Boolean" Nullable="true" />
           <Property Name="Part_Type" Type="String" Nullable="false" />
           <Property Name="Is_Complete_System" Type="Boolean" Nullable="true" />
           <Property Name="Serial_Number" Type="String" Nullable="false" />
-          <Property Name="Service_Number" Type="String" Nullable="false" />
+          <Property Name="Service_Number" Type="String" Nullable="true" />
           <Property Name="Is_Asset_Tags" Type="Boolean" Nullable="true" />
           <Property Name="Asset_ID" Type="String" Nullable="true" />
           <Property Name="Issues_Note" Type="String" Nullable="true" />
@@ -318,11 +320,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(Cr.Inventory)">
         <MappingFragment StoreEntitySet="Inventories">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Is_Ram_Installed" ColumnName="Is_Ram_Installed" />
           <ScalarProperty Name="Comp_Name" ColumnName="Comp_Name" />
           <ScalarProperty Name="Comp_Check_In" ColumnName="Comp_Check_In" />
           <ScalarProperty Name="Comp_Check_Out" ColumnName="Comp_Check_Out" />
           <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
-          <ScalarProperty Name="Is_Ram_Installed" ColumnName="Is_Ram_Installed" />
           <ScalarProperty Name="Is_Power_Supply_Installed" ColumnName="Is_Power_Supply_Installed" />
           <ScalarProperty Name="Part_Type" ColumnName="Part_Type" />
           <ScalarProperty Name="Is_Complete_System" ColumnName="Is_Complete_System" />

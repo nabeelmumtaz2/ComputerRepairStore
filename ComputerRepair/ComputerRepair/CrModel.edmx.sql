@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/14/2019 23:03:47
+-- Date Created: 05/27/2019 19:22:48
 -- Generated from EDMX file: C:\Users\Nabeel Mumtaz\source\repos\ComputerRepairStore2\ComputerRepair\ComputerRepair\CrModel.edmx
 -- --------------------------------------------------
 
@@ -85,10 +85,10 @@ CREATE TABLE [dbo].[Systems1] (
     [Job_Completed] bit  NULL,
     [Paid] bit  NULL,
     [Data_BackUp_Required] bit  NULL,
-    [Login_Details] nvarchar(max)  NOT NULL,
-    [Missing_Adapter] bit  NOT NULL,
-    [Missing_Keys] bit  NOT NULL,
-    [Broken_Screen] bit  NOT NULL
+    [Login_Details] nvarchar(max)  NULL,
+    [Missing_Adapter] bit  NULL,
+    [Missing_Keys] bit  NULL,
+    [Broken_Screen] bit  NULL
 );
 GO
 
@@ -110,12 +110,12 @@ CREATE TABLE [dbo].[Inventories] (
     [Comp_Check_In] datetime  NOT NULL,
     [Comp_Check_Out] datetime  NOT NULL,
     [Brand_Name] nvarchar(max)  NOT NULL,
-    [Is_Ram_Installed] bit  NULL,
+    [Is_Ram_Installed] bit  NOT NULL,
     [Is_Power_Supply_Installed] bit  NULL,
     [Part_Type] nvarchar(max)  NOT NULL,
     [Is_Complete_System] bit  NULL,
     [Serial_Number] nvarchar(max)  NOT NULL,
-    [Service_Number] nvarchar(max)  NOT NULL,
+    [Service_Number] nvarchar(max)  NULL,
     [Is_Asset_Tags] bit  NULL,
     [Asset_ID] nvarchar(max)  NULL,
     [Issues_Note] nvarchar(max)  NULL,
@@ -146,10 +146,10 @@ ADD CONSTRAINT [PK_Agents]
     PRIMARY KEY CLUSTERED ([Agent_Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Inventories'
+-- Creating primary key on [Id], [Is_Ram_Installed] in table 'Inventories'
 ALTER TABLE [dbo].[Inventories]
 ADD CONSTRAINT [PK_Inventories]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([Id], [Is_Ram_Installed] ASC);
 GO
 
 -- --------------------------------------------------
