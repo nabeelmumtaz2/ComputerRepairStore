@@ -54,7 +54,7 @@ namespace ComputerRepair.Controllers
             {
                 db.Systems1.Add(systems);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","Agents");
             }
 
             ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Phone_Number", systems.CustomersClient_Id);

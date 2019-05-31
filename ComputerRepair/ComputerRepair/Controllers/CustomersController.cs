@@ -62,7 +62,7 @@ namespace ComputerRepair.Controllers
                     db.Customers.Add(customers);
                     db.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","Systems");
             }
 
             return View(customers);
