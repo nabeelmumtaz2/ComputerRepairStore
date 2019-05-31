@@ -55,7 +55,7 @@ namespace ComputerRepair.Controllers
             {
                 db.Agents.Add(agents);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home", new { step = "Done" });
             }
 
             ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Mac_Number", agents.SystemsSystem_Id);

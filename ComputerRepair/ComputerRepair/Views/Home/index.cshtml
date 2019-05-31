@@ -1,21 +1,42 @@
 ﻿
 @{
     ViewBag.Title = "Home";
+    var results = ViewBag.message;
 }
-<div class="row">
-    <div class="column">
-        <a href='@Url.Action("Create", "Customers")'>
-            <img width="250" src="~/Content/Images/number-one-in-a-circle.png" />
-            </a>
-    </div>
-    <div class="column">
-        <a href='@Url.Action("Create", "Systems")'>
-            <img width="250" src="~/Content/Images/number-two-in-a-circle.png" />
-            </a>
-    </div>
-    <div class="column">
-        <a href='@Url.Action("Create", "Agents")'>
-            <img width="250" src="~/Content/Images/number-three-in-a-circle.png" />
-            </a>
-    </div>
-</div>
+<h1></h1>
+<h1></h1>
+
+   <div class="row">
+    @{
+        if (results == null)
+        {
+            <div class="column">
+                <a href='@Url.Action("Create", "Customers")'>
+                    <img width="250" src="~/Content/Images/number-one-in-a-circle.png" />
+                </a>
+            </div>
+        }
+        }
+            @{
+                if (results != null && results == "2")
+                {
+                    <div class="column">
+                        <a href='@Url.Action("Create", "Systems")'>
+                            <img width="250" style="background-color:orangered" src="~/Content/Images/number-two-in-a-circle.png" />
+                        </a>
+                    </div>
+                }
+            }
+            @{
+                if (results != null && results == "3")
+                {
+                    <div class="column">
+                        <a href='@Url.Action("Create", "Agents")'>
+                            <img width="250" style="background-color:orangered" src="~/Content/Images/number-three-in-a-circle.png" />
+                        </a>
+                    </div>
+
+                }
+            }
+        </div>
+          

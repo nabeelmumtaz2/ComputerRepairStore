@@ -9,8 +9,9 @@ namespace ComputerRepair.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(string step)
         {
+            ViewBag.message = step;
             return View();
         }
     }
