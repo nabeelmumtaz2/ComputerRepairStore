@@ -39,7 +39,7 @@ namespace ComputerRepair.Controllers
         // GET: Systems/Create
         public ActionResult Create()
         {
-            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Phone_Number");
+            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace ComputerRepair.Controllers
                 return RedirectToAction("Index", "Home", new { step = "3" });
             }
 
-            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Phone_Number", systems.CustomersClient_Id);
+            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email", systems.CustomersClient_Id);
             return View(systems);
         }
 
