@@ -149,7 +149,7 @@ GO
 -- Creating primary key on [Id], [Is_Ram_Installed] in table 'Inventories'
 ALTER TABLE [dbo].[Inventories]
 ADD CONSTRAINT [PK_Inventories]
-    PRIMARY KEY CLUSTERED ([Id], [Is_Ram_Installed] ASC);
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------

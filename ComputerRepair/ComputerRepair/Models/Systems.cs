@@ -68,8 +68,8 @@ namespace ComputerRepair
         public bool Missing_Keys { get; set; }
         [Display(Name = "Broken Screen")]
         public bool Broken_Screen { get; set; }
-
-        public int CustomersClient_Id { get; set; }
+        [Required]
+         public int CustomersClient_Id { get; set; }
     
         public virtual Customers Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -28,6 +28,7 @@ namespace ComputerRepair
         [Required]
         [Display(Name = "Shift Type")]
         public string Shift_Type { get; set; }
+        [Required]
         public Nullable<int> SystemsSystem_Id { get; set; }
     
         public virtual Systems System { get; set; }

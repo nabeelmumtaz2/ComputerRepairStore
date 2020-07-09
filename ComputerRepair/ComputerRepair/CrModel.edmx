@@ -80,7 +80,6 @@
   <EntityType Name="Inventories">
     <Key>
       <PropertyRef Name="Id" />
-      <PropertyRef Name="Is_Ram_Installed" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Comp_Name" Type="nvarchar(max)" Nullable="false" />
@@ -230,7 +229,6 @@
         <EntityType Name="Inventory">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Is_Ram_Installed" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Comp_Name" Type="String" Nullable="false" />
