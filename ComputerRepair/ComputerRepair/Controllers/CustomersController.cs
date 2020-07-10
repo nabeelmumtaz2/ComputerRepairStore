@@ -56,13 +56,15 @@ namespace ComputerRepair.Controllers
                 if (emailExist != null)
                 {
                     TempData["Exist"] = "Client already exist";
+              
                 }
                 else
                 {
                     db.Customers.Add(customers);
                     db.SaveChanges();
+                    return RedirectToAction("Index", "Home", new { step = "2" });
                 }
-                return RedirectToAction("Index","Home", new { step = "2" });
+                
             }
 
             return View(customers);

@@ -4,88 +4,83 @@
     ViewBag.Title = "New Customers";
 }
 <h2></h2>
-@{ if (@TempData["Exist"] != null)
-    {
-<div class="alert alert-info">
-    <strong>Info!</strong> @TempData["Exist"];
-</div>
-        }
-    }
+
 <p>
     <!--@Html.ActionLink("Create A New Customer", "Create", "customers", null, new { @class = "btn btn-primary btn-large" }) -->
 
 </p>
 <table class="table">
-    <tr>
-        <th>
-            First Name
-        </th>
-        <th>
-            Last Name
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            Phone Number
-        </th>
-        <th>
-        Mobile
-        </th>
-        <th>
-        Postal Code
-        </th>
-        <th>
-        Country
-        </th>
-        <th>
-        Email
-        </th>
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Mobile
+            </th>
+            <th>
+                Postal Code
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    <thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.First_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td width="300">
+                    <a href="@Url.Action("Edit", "Customers", new { id = item.Client_Id })" class="btn btn-primary">
+                        Edit
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Customers", new { id = item.Client_Id })" class="btn btn-info">
+                        Details
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Customers", new { id = item.Client_Id })" class="btn btn-danger">
+                        Delete
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                    </a>
 
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.First_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Last_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mobile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Post_Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            <a href="@Url.Action("Edit", "Customers", new { id = item.Client_Id })" class="btn btn-primary">
-                Edit
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Details", "Customers", new { id = item.Client_Id })" class="btn btn-info">
-                Details
-                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Delete", "Customers", new { id = item.Client_Id })" class="btn btn-danger">
-                Delete
-                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-            </a>
-
-        </td>
-    </tr>
-    }
+                </td>
+            </tr>
+        }
 
 </table>

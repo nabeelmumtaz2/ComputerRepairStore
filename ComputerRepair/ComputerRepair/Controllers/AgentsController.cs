@@ -74,7 +74,7 @@ namespace ComputerRepair.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Brands", agents.SystemsSystem_Id);
+            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Mac_Number", agents.SystemsSystem_Id);
             return View(agents);
         }
 
@@ -91,7 +91,7 @@ namespace ComputerRepair.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Brands", agents.SystemsSystem_Id);
+            ViewBag.SystemsSystem_Id = new SelectList(db.Systems1, "System_Id", "Mac_Number", agents.SystemsSystem_Id);
             return View(agents);
         }
 

@@ -4,111 +4,115 @@
     ViewBag.Title = "Index";
 }
 
-<h2></h2
+<h2></h2>
 
 <p>
     @Html.ActionLink("Create A New item", "Create", "Inventories", null, new { @class = "btn btn-primary btn-large" })
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Comp_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comp_Check_In)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comp_Check_Out)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Ram_Installed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Power_Supply_Installed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Part_Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Complete_System)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Serial_Number)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Service_Number)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Asset_Tags)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Asset_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Issues_Note)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comp_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comp_Check_In)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comp_Check_Out)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Ram_Installed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Power_Supply_Installed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Part_Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Complete_System)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Serial_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Service_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Asset_Tags)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Asset_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Issues_Note)
-        </td>
-        <td>
-            <a href="@Url.Action("Edit", "Inventories", new { id = item.Id  })" class="btn btn-primary">
-                Edit
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Details", "Inventories", new { id = item.Id  })" class="btn btn-info">
-                Details
-                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Delete", "Inventories", new { id = item.Id  })" class="btn btn-danger">
-                Delete
-                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-            </a>
-        </td>
-    </tr>
-}
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comp_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comp_Check_In)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comp_Check_Out)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Ram_Installed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Power_Supply_Installed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Part_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Complete_System)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Asset_Tags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issues_Note)
+            </th>
+            <th></th>
+        </tr>
+    <thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comp_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comp_Check_In)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comp_Check_Out)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Is_Ram_Installed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Is_Power_Supply_Installed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Part_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Is_Complete_System)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serial_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Service_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Is_Asset_Tags)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asset_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Issues_Note)
+                </td>
+                <td width="300">
+                    <a href="@Url.Action("Edit", "Inventories", new { id = item.Id  })" class="btn btn-primary">
+                        Edit
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    </a>
+                    <p></p>
+                    <a href="@Url.Action("Details", "Inventories", new { id = item.Id  })" class="btn btn-info">
+                        Details
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                    </a>
+                    <p></p>
+                    <a href="@Url.Action("Delete", "Inventories", new { id = item.Id  })" class="btn btn-danger">
+                        Delete
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        }
 
 </table>

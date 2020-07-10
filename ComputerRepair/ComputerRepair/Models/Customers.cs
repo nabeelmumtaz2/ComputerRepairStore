@@ -35,6 +35,7 @@ namespace ComputerRepair
         public string Phone_Number { get; set; }
         [Display(Name = "Email")]
         [Required(ErrorMessage = "You must provide a Email")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Invalid email")]
         public string Email { get; set; }
         [Display(Name = "Company")]
         public string Company { get; set; }

@@ -40,6 +40,7 @@ namespace ComputerRepair.Controllers
         public ActionResult Create()
         {
             ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email");
+            
             return View();
         }
 
@@ -50,11 +51,20 @@ namespace ComputerRepair.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "System_Id,Brands,Note,Drop_Off_Date,Pick_Up_Date,Quote,CustomersClient_Id,IsLaptop,IsDesktop,Is_All_In_One, IsMonitor,Tablet,IsCell_Phone,Mac_Number,Priority,Currect_Status,Job_Completed,Paid,Data_BackUp_Required,Login_Details,Missing_Adapter,Missing_Keys,Broken_Screen")] Systems systems)
         {
+            var macExist = db.Systems1.Where(x => x.Mac_Number == systems.Mac_Number).FirstOrDefault();
             if (ModelState.IsValid)
             {
-                db.Systems1.Add(systems);
-                db.SaveChanges();
-                return RedirectToAction("Index", "Home", new { step = "3" });
+                if (macExist == null)
+                {
+                    db.Systems1.Add(systems);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Home", new { step = "3" });
+                }
+                else
+                {
+                    TempData["Exist"] = "MAC Address already exist";
+                }
+                
             }
 
             ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email", systems.CustomersClient_Id);
@@ -73,7 +83,7 @@ namespace ComputerRepair.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "First_Name", systems.CustomersClient_Id);
+            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email", systems.CustomersClient_Id);
             return View(systems);
         }
 
@@ -90,7 +100,7 @@ namespace ComputerRepair.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "First_Name", systems.CustomersClient_Id);
+            ViewBag.CustomersClient_Id = new SelectList(db.Customers, "Client_Id", "Email", systems.CustomersClient_Id);
             return View(systems);
         }
 

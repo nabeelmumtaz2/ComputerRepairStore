@@ -4,7 +4,14 @@
     var results = ViewBag.message;
 }
 <h1></h1>
-<h1 style="text-align:center">Step</h1>
+@{
+    if (results == null && results != "Done")
+    {        
+    <h1 style="margin-left:70px">Steps</h1>
+    }
+}
+
+
 
 <div class="row">
     @{
@@ -15,6 +22,7 @@
                     <img width="250" src="~/Content/Images/number-one-in-a-circle.png" />
                 </a>
             </div>
+
         }
     }
     @{
@@ -41,9 +49,18 @@
     @{
         if (results != null && results == "Done")
         {
-            <h3>Customer added successfully,   @Html.ActionLink("Click here me to repeat the steps", "Index", "Home")</h3>
+            <h3 style="margin-left:30px">Customer added successfully,   @Html.ActionLink("Click here me to repeat the steps", "Index", "Home")</h3>
 
         }
     }
+
 </div>
-          
+@{
+    if (results == null)
+    {
+        <h1></h1>
+        <div class="alert alert-info" role="alert">
+            Please follow three steps on your screen to add a client.!
+        </div>
+    }
+}

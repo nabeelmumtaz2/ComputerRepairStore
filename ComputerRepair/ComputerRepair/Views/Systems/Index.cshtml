@@ -10,57 +10,65 @@
     <!-- @Html.ActionLink("Create A New System", "Create", "Systems", null, new { @class = "btn btn-primary btn-large" })-->
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Brands)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Note)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Drop_Off_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pick_Up_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quote)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brands)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Note)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Drop_Off_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pick_Up_Date)
-        </td>
-        <td>
-           $@Html.DisplayFor(modelItem => item.Quote)
-        </td>
-        <td>
-            <a href="@Url.Action("Edit", "Systems", new { id = item.System_Id  })" class="btn btn-primary">
-                Edit
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Details", "Systems", new { id = item.System_Id  })" class="btn btn-info">
-                Details
-                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-            </a>
-            <a href="@Url.Action("Delete", "Systems", new { id = item.System_Id  })" class="btn btn-danger">
-                Delete
-                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-            </a>
-        </td>
-    </tr>
-}
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brands)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Drop_Off_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pick_Up_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quote)
+            </th>
+            <th>
+                Clients
+            </th>
+            <th></th>
+        </tr>
+    <thead>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brands)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drop_Off_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pick_Up_Date)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Quote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Email)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Systems", new { id = item.System_Id  })" class="btn btn-primary">
+                    Edit
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                </a>
+                <a href="@Url.Action("Details", "Systems", new { id = item.System_Id  })" class="btn btn-info">
+                    Details
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                </a>
+                <a href="@Url.Action("Delete", "Systems", new { id = item.System_Id  })" class="btn btn-danger">
+                    Delete
+                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+        }
 
 </table>
