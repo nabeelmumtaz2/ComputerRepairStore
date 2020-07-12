@@ -126,9 +126,9 @@
             @Html.LabelFor(model => model.Priority, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(x => x.Priority, new[] {
-                new SelectListItem() {Text = "Highest", Value = "1"},
-                new SelectListItem() {Text = "Medium", Value = "2"},
-                new SelectListItem() {Text = "Lowest", Value = "3"}
+                new SelectListItem() {Text = "Highest", Value = "Highest"},
+                new SelectListItem() {Text = "Medium", Value = "Medium"},
+                new SelectListItem() {Text = "Lowest", Value = "Lowest"}
             }, "Choose an option", new { @class = "form-control" })
                 <!-- @Html.EditorFor(model => model.Priority, new { htmlAttributes = new { @class = "form-control" } }) -->
                 @Html.ValidationMessageFor(model => model.Priority, "", new { @class = "text-danger" })
@@ -137,7 +137,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Currect_Status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Currect_Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(x => x.Currect_Status, new[] {
+               new SelectListItem() {Text = "In Process", Value = "In Process"},
+               new SelectListItem() {Text = "New", Value = "New"},
+               new SelectListItem() {Text = "On Hold", Value = "On Hold"},
+               new SelectListItem() {Text = "Cancelled", Value = "Cancelled"},
+               new SelectListItem() {Text = "Completed", Value = "Completed"}
+           }, "Choose an option", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Currect_Status, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -44,7 +44,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Shift_Type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Shift_Type, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Shift_Type, new[] {
+             new SelectListItem() {Text = "First shift", Value = "First shift"},
+             new SelectListItem() {Text = "Second shift", Value = "Second shift"},
+             new SelectListItem() {Text = "Third shift", Value = "Third shift."},
+             new SelectListItem() {Text = "Weekend shift", Value = "Weekend shift"},
+             new SelectListItem() {Text = "Rotating shift", Value = "Rotating shift"}
+         }, "Choose an option", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Shift_Type, "", new { @class = "text-danger" })
             </div>
         </div>

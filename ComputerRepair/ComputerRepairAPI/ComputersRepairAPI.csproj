@@ -257,9 +257,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ComputerRepair\ComputerRepair.csproj">
+    <ProjectReference Include="..\ComputerRepair\ComputersRepair.csproj">
       <Project>{40b079fc-f1ca-43b0-bf5f-13978e8ce8aa}</Project>
-      <Name>ComputerRepair</Name>
+      <Name>ComputersRepair</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

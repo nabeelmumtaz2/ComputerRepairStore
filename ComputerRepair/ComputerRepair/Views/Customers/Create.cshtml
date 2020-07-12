@@ -82,8 +82,8 @@
             <label class="control-label col-md-2">Country</label>
             <div class="col-md-10">
                 @Html.DropDownListFor(x => x.Country, new[] {
-               new SelectListItem() {Text = "Canada", Value = "1"},
-               new SelectListItem() {Text = "USA", Value = "2"}
+               new SelectListItem() {Text = "Canada", Value = "Canada"},
+               new SelectListItem() {Text = "USA", Value = "USA"}
            }, "Choose an option", new { @class = "form-control" })
                 <!-- @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } }) -->
                 @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
